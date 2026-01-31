@@ -2,6 +2,7 @@ package com.fabric.vendor.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 
 @Getter
@@ -10,7 +11,8 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 @Entity
-public class fabricVendor {
+@Table(name = "fabric_vendor_info")
+public class FabricVendor {
     @Id
     private String id;
     private String name;
