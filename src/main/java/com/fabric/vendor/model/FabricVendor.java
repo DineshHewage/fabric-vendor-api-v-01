@@ -22,4 +22,8 @@ public class FabricVendor {
     private Integer leadTimeInDays;
 //    private Integer leadTime;  - Can be null
 //    private int leadTime;      - Cannot be null, defaults to 0
+
+/*   leadTimeInDays - This is a technical word related to the apparel industry and it
+    the time take to come fabric to your location from the fabric mill(Where fabric are manufactured)
+    */
 }
