@@ -15,10 +15,11 @@ import lombok.*;
 public class FabricVendor {
     @Id
     private String id;
+
     private String name;
     private String email;
     private String fabricType;
-    private Integer leadTime;
+    private Integer leadTimeInDays;
 //    private Integer leadTime;  - Can be null
 //    private int leadTime;      - Cannot be null, defaults to 0
 }

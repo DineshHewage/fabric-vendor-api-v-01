@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url : jdbc:mysql://localhost:3306/fabricVendor?userSSL=False;
+    url : jdbc:mysql://localhost:3306/fabricVendor?useSSL=False
     username : root
     password : Dinesh@12345
 

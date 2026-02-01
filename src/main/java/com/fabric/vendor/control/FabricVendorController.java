@@ -1,27 +1,43 @@
 package com.fabric.vendor.control;
 
 import com.fabric.vendor.model.FabricVendor;
-import org.springframework.web.bind.annotation.RestController;
+import com.fabric.vendor.service.FabricVendorService;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
+@RequestMapping("/mill")
 public class FabricVendorController {
+    FabricVendorService fabricVendorService;
 
-    public String createFabricVendor() {
-        return "Sucess";
+    public FabricVendorController(FabricVendorService fabricVendorService) {
+        this.fabricVendorService = fabricVendorService;
     }
 
-    public String updateFabricVendor() {
-        return "Sucess";
+    @PostMapping
+    public String createFabricVendor(@RequestBody FabricVendor fabricVendor) {
+        return fabricVendorService.createFabricVendor (fabricVendor);
     }
-    public String deleteFabricVendor() {
-        return "Sucess";
+
+    @PutMapping
+    public String updateFabricVendor(@RequestBody FabricVendor fabricVendor) {
+        return fabricVendorService.updateFabricVendor(fabricVendor);
     }
-    // retrieve only one fabric vendor
-//    public FabricVendor getFabricVendor() {
-//
-//    }
-//    // retrieve all fabric vendor
-//    public String listFabricVendor() {
-//
-//    }
+
+    @DeleteMapping("{id}")
+    public String deleteFabricVendor(@PathVariable String id) {
+        return fabricVendorService.deleteFabricVendor(id);
+    }
+
+//     retrieve only one fabric vendor
+    @GetMapping("{id}")
+    public FabricVendor getFabricVendor(@PathVariable String id) {
+        return fabricVendorService.getFabricVendor(id);
+    }
+
+//     retrieve all fabric vendor
+    @GetMapping
+    public List<FabricVendor> listFabricVendor() {
+        return fabricVendorService.getAllFabricVendors();
+    }
 }

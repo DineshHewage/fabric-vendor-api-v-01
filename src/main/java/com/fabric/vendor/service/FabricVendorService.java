@@ -1,7 +1,6 @@
 package com.fabric.vendor.service;
 
 import com.fabric.vendor.model.FabricVendor;
-
 import java.util.List;
 
 public interface FabricVendorService {
