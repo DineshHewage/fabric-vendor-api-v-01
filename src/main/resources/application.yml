@@ -1,8 +1,8 @@
 spring:
   datasource:
     url : jdbc:mysql://localhost:3306/fabricVendor?useSSL=False
-    username : root
-    password : Dinesh@12345
+    username : // Enter the user name of the DB
+    password : // Enter the password of the DB
 
 #JPA settings
   jpa:
