@@ -1,5 +1,6 @@
 package com.fabric.vendor.service.impl;
 
+import com.fabric.vendor.exception.FabricVendorNotFoundException;
 import com.fabric.vendor.model.FabricVendor;
 import com.fabric.vendor.repository.FabricVendorRepository;
 import com.fabric.vendor.service.FabricVendorService;
@@ -35,8 +36,9 @@ public class FabricVendorServiceImpl implements FabricVendorService {
 
     @Override
     public FabricVendor getFabricVendor(String vendorId) {
+        if(fabricVendorRepository.findById(vendorId).isEmpty())
+            throw new FabricVendorNotFoundException("The fabric vendor " + vendorId + " does not exist");
         return fabricVendorRepository.findById(vendorId).get();
-        // Here the exception has not handled and it should be handled.
     }
 
     @Override
