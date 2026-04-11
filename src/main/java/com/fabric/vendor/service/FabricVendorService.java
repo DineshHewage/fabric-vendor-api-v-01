@@ -4,9 +4,9 @@ import com.fabric.vendor.model.FabricVendor;
 import java.util.List;
 
 public interface FabricVendorService {
-    public String createFabricVendor(FabricVendor fabricVendor);
-    public String updateFabricVendor(FabricVendor fabricVendor);
-    public String deleteFabricVendor(String vendorId);
+    public FabricVendor createFabricVendor(FabricVendor fabricVendor);
+    public FabricVendor updateFabricVendor(FabricVendor fabricVendor);
+    public void deleteFabricVendor(String vendorId);
     public FabricVendor getFabricVendor(String vendorId);
     public List<FabricVendor> getAllFabricVendors();
 }

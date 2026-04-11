@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 @Getter
 @AllArgsConstructor
 public class FabricVendorException {
+    private final HttpStatus httpStatus;
     private final String message;
     private final Throwable cause;
-    private final HttpStatus httpStatus;
 }

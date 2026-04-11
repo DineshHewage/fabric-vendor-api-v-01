@@ -8,12 +8,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class FabricVendorExceptionHandler {
     @ExceptionHandler(value = {FabricVendorNotFoundException.class})
-
     public ResponseEntity<Object> handleFabricVendorNotFoundException(FabricVendorNotFoundException fabricVendorNotFoundException) {
         FabricVendorException fabricVendorException = new FabricVendorException(
+                HttpStatus.NOT_FOUND,
                 fabricVendorNotFoundException.getMessage(),
-                fabricVendorNotFoundException.getCause(),
-                HttpStatus.NOT_FOUND
+                fabricVendorNotFoundException.getCause()
                 );
         return new ResponseEntity<>(fabricVendorException, HttpStatus.NOT_FOUND);
     }
